@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 34px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #1865d6;
+        padding: 0px;
+        margin-bottom: 10px;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h2 {
+        text-align: center;
+        font-weight: lighter;
+        font-size: 34px;
+        padding: 0px;
+        margin-top: 5px;
+      }
+      h3 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 18px;
+        color: #4d4c47;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li:hover {
+        background: #fefbef;
+      }
+      li {
+        margin: 0 auto;
+        padding: 10px;
+        width: 400px;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 16px 24px;
+        background: #1865d6;
+        color: white;
+        border-radius: 30px;
+        border: #1865d6 1px solid;
+        font-size: 16px;
+      }
+      button:hover {
+        background: white;
+        color: #1865d6;
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+      }
+      .credit {
+        font-size: 18px;
+        font-family: monospace;
+        text-align: center;
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      🌤 <br />
+      Currently 21° in Tokyo
+    </h1>
+    <h2>13°/ <strong>23°</strong></h2>
+    <ul>
+      <li>
+        <h3>🌧 Tomorrow</h3>
+        <p>10° / <strong>22°</strong></p>
+      </li>
+      <li>
+        <h3>🌥 Saturday</h3>
+        <p>15° / <strong>17°</strong></p>
+      </li>
+      <li>
+        <h3>☀️ Sunday</h3>
+        <p>25° / <strong>28°</strong></p>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <div class="credit">Coded by Megan Vickers</div>
+    <script>
+      function updateTemp() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let update = document.querySelector("h1");
+        update.innerHTML =
+          "😄 <br/>" + "Currently " + temperature + "° in " + city;
+      }
+      let cityButton = document.querySelector("button");
+      cityButton.addEventListener("click", updateTemp);
+    </script>
+  </body>
+</html>
